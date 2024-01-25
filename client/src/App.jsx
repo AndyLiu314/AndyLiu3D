@@ -5,6 +5,8 @@ import viteLogo from '/vite.svg'
 import Canvas from './canvas';
 import Home from './pages/Home'
 import './App.css'
+import {Route, BrowserRouter as Router, Routes} from 'react-router-dom';
+import Navbar from './components/Navbar';
 
 /* TESTING THREE.JS SCENE 
 const scene = new THREE.Scene();
@@ -49,8 +51,17 @@ renderer.render(scene, camera); */
 function App() {
   return (
     <main className="app transition-all ease-in text-3xl font-bold underline">
-      <Home />
-      <Canvas />
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path = "/" element = {'Home'} />
+          <Route path = "/about" element = {'About'} />
+          <Route path = "/projects" element = {'Projects'} />
+          <Route path = "/contact" element = {'Contact'} />
+        </Routes>
+      </Router>
+{/*       <Home />
+      <Canvas /> */}
     </main>
   )
 }
