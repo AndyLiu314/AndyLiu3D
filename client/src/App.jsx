@@ -48,7 +48,7 @@ renderer.render(scene, camera); */
 
 function App() {
   return (
-    <main className="app transition-all ease-in">
+    <main className="app transition-all ease-in text-3xl font-bold underline">
       <Home />
       <Canvas />
     </main>
