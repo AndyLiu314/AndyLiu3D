@@ -1,2 +1,2 @@
 # MyPortfolio
- A portfolio website made using React and Three.js 
+ A 3D portfolio website made using React and Three.js. This is a work in progress.
