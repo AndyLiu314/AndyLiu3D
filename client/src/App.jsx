@@ -1,12 +1,7 @@
-import { useState } from 'react'
-import * as THREE from 'three';
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import Canvas from './canvas';
-import Home from './pages/Home'
-import './App.css'
 import {Route, BrowserRouter as Router, Routes} from 'react-router-dom';
 import Navbar from './components/Navbar';
+import {Home, About, Projects, Contact} from './pages';
+import './App.css'
 
 /* TESTING THREE.JS SCENE 
 const scene = new THREE.Scene();
@@ -54,14 +49,12 @@ function App() {
       <Router>
         <Navbar />
         <Routes>
-          <Route path = "/" element = {'Home'} />
-          <Route path = "/about" element = {'About'} />
-          <Route path = "/projects" element = {'Projects'} />
-          <Route path = "/contact" element = {'Contact'} />
+          <Route path = "/" element = {<Home />} />
+          <Route path = "/about" element = {<About />} />
+          <Route path = "/projects" element = {<Projects />} />
+          <Route path = "/contact" element = {<Contact />} />
         </Routes>
       </Router>
-{/*       <Home />
-      <Canvas /> */}
     </main>
   )
 }
