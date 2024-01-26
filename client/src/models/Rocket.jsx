@@ -15,19 +15,17 @@ import rocketScene from '../assets/3D/toy_rocket.glb';
 
 const Rocket = (props) => {
   const rocketRef = useRef();
-  const { nodes, materials } = useGLTF("/toy_rocket.glb");
+  const { nodes, materials } = useGLTF(rocketScene);
 
   return (
     <a.group ref = {rocketRef} {...props}>
       <mesh
         geometry={nodes.Object_4.geometry}
         material={materials.Material}
-        rotation={[Math.PI / 2, 0, 0]}
+        //rotation={[Math.PI / 2, 0, 0]}
       />
     </a.group>
   );
 }
-
-//useGLTF.preload("/toy_rocket.glb");
 
 export default Rocket;
