@@ -1,5 +1,5 @@
 import {Route, BrowserRouter as Router, Routes} from 'react-router-dom';
-import Navbar from './components/Navbar';
+import Sidebar from './components/Sidebar';
 import {Home, About, Projects, Contact} from './pages';
 import './App.css'
 
@@ -20,7 +20,7 @@ function App() {
   return (
     <main className="app transition-all ease-in text-3xl font-bold underline">
       <Router>
-        <Navbar />
+        <Sidebar />
         <Routes>
           <Route path = "/" element = {<Home />} />
           <Route path = "/about" element = {<About />} />

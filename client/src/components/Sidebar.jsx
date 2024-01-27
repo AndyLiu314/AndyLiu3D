@@ -1,15 +1,14 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
-const Navbar = () => {
+const Sidebar = () => {
   return (
     <header className='header'>
-      <NavLink>
+      <NavLink to = '/' className = ' '>
 
       </NavLink>
-
     </header>
   )
 }
 
-export default Navbar
+export default Sidebar
