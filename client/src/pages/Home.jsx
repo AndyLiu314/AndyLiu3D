@@ -1,8 +1,8 @@
-import React from 'react'
-import { Suspense } from 'react'
-import { Canvas } from '@react-three/fiber'
-import Loader from '../components/Loader'
-import Rocket from '../models/Rocket'
+import React from 'react';
+import { Suspense } from 'react';
+import { Canvas } from '@react-three/fiber';
+import Loader from '../components/Loader';
+import Rocket from '../models/Rocket';
 
 const Home = () => {
   const adjustRocket = () => {
@@ -46,4 +46,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Home;
