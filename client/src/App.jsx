@@ -1,7 +1,7 @@
 import {Route, BrowserRouter as Router, Routes} from 'react-router-dom';
 import Sidebar from './components/Sidebar';
 import {Home, About, Projects, Contact} from './pages';
-import './App.css'
+import './App.css';
 
 /* TESTING THREE.JS SCENE 
 const scene = new THREE.Scene();
