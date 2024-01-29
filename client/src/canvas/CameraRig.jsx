@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const CameraRig = () => {
   return (
@@ -6,4 +6,4 @@ const CameraRig = () => {
   )
 }
 
-export default CameraRig
+export default CameraRig;

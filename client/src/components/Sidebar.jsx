@@ -32,4 +32,4 @@ const SidebarIcon = ({ icon }) => (
   </div>
 )
 
-export default Sidebar
+export default Sidebar;
