@@ -13,7 +13,7 @@ const Home = () => {
     if (window.innerWidth < 768) {
       screenScale = [0.9, 0.9, 0.9];
     } else {
-      screenScale = [1, 1, 1];
+      screenScale = [3, 3, 3];
     }
 
     return [screenScale, screenPosition, rotation];
@@ -22,7 +22,7 @@ const Home = () => {
   const [rocketScale, rocketPosition, rocketRotation] = adjustRocket();
 
   return (
-    <section className = 'w-full h-screen relative'>
+    <section className = 'w-full h-screen absolute'>
       <Canvas 
         className='w-full h-screen bg-transparent'
         camera = {{ near: 0.1, far: 1000}} >

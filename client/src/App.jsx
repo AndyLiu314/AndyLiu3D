@@ -18,7 +18,7 @@ renderer.render(scene, camera); */
 
 function App() {
   return (
-    <main className="app transition-all ease-in text-3xl font-bold underline">
+    <main className="bg-slate-300/20">
       <Router>
         <Sidebar />
         <Routes>
