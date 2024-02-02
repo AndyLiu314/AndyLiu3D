@@ -4,17 +4,18 @@ import { Canvas } from '@react-three/fiber';
 import Loader from '../components/Loader';
 import Rocket from '../models/Rocket';
 import { OrbitControls } from '@react-three/drei';
+import Space from '../models/Space';
 
 const Home = () => {
   const adjustRocket = () => {
     let screenScale = null;
-    let screenPosition = [0, -20, 0];
+    let screenPosition = [0, 0, 0];
     let rotation = [0,3.15,0];
 
     if (window.innerWidth < 768) {
       screenScale = [0.9, 0.9, 0.9];
     } else {
-      screenScale = [3, 3, 3];
+      screenScale = [1, 1, 1];
     }
 
     return [screenScale, screenPosition, rotation];
@@ -30,16 +31,17 @@ const Home = () => {
           fov: 75,
           near: 0.1, 
           far: 1000,
-          position: [0, 0, -40]}} >
+          position: [0, 0, -20]}} >
 
         <Suspense fallback={<Loader />}>
-          {/* <OrbitControls /> */}
-          <directionalLight />
+          <OrbitControls />
+          <directionalLight position={[1,1,1]} intensity={4}/>
           <ambientLight />
           <pointLight />
           <spotLight />
           <hemisphereLight />
 
+          <Space />
           <Rocket 
             position = {rocketPosition}
             scale = {rocketScale}
