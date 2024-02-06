@@ -24,9 +24,9 @@ const Home = () => {
   const [rocketScale, rocketPosition, rocketRotation] = adjustRocket();
 
   return (
-    <section className = 'w-full h-screen absolute'>
+    <section className = 'w-screen h-screen fixed'>
       <Canvas 
-        className='w-full h-screen bg-transparent'
+        className='w-screen h-screen bg-transparent'
         camera = {{ 
           fov: 75,
           near: 0.1, 
