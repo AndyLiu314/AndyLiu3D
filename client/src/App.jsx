@@ -18,7 +18,7 @@ renderer.render(scene, camera); */
 
 function App() {
   return (
-    <main className="bg-slate-300/20">
+    <main className="overflow-hidden">
       <Router>
         <Sidebar />
         <Routes>
