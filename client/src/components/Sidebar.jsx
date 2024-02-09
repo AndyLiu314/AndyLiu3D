@@ -13,23 +13,23 @@ const Sidebar = () => {
   return (
     <header className='header'>
       <NavLink to = '/' className={({ isActive }) => isActive ? 'text-blue-500' : 'text-green-500'}>
-        <SidebarIcon icon={Earth} />
+        <SidebarIcon icon={Earth} title='Home'/>
       </NavLink>
       <NavLink to='/about' className={({ isActive }) => isActive ? 'text-blue-500' : 'text-green-500'}>
-        <SidebarIcon icon={Mars} />
+        <SidebarIcon icon={Mars} title='About'/>
       </NavLink>
       <NavLink to='/projects' className={({ isActive }) => isActive ? 'text-blue-500' : 'text-green-500'}>
-        <SidebarIcon icon={Jupiter} />
+        <SidebarIcon icon={Jupiter} title='Projects'/>
       </NavLink>
       <NavLink to='/contact' className={({ isActive }) => isActive ? 'text-blue-500' : 'text-green-500'}>
-      <SidebarIcon icon={Saturn} />
+      <SidebarIcon icon={Saturn} title='Contact'/>
       </NavLink>
     </header>
   )
 }
 
-const SidebarIcon = ({ icon }) => (
-  <div className='sidebar-icon'>
+const SidebarIcon = ({ icon, title }) => (
+  <div className='sidebar-icon' title={title}>
     <img src={icon} />
   </div>
 )
