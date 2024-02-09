@@ -15,6 +15,7 @@ const Sidebar = () => {
       <NavLink to='/about' className={({ isActive }) => isActive ? 'text-blue-500' : 'text-green-500'}>
         About
         {/* <Saturn /> */}
+        {/* <img /> */}
       </NavLink>
       <NavLink to='/projects' className={({ isActive }) => isActive ? 'text-blue-500' : 'text-green-500'}>
         Projects
