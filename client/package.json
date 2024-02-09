@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "build:svg": "svgr -d svg/ components/",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
@@ -14,7 +13,6 @@
     "@react-spring/three": "^9.7.3",
     "@react-three/drei": "^9.96.1",
     "@react-three/fiber": "^8.15.14",
-    "@svgr/cli": "^8.1.0",
     "framer-motion": "^10.18.0",
     "maath": "^0.10.7",
     "react": "^18.2.0",
@@ -25,7 +23,6 @@
     "valtio": "^1.13.0"
   },
   "devDependencies": {
-    "@svgr/webpack": "^8.1.0",
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
     "@vitejs/plugin-react": "^4.2.1",
