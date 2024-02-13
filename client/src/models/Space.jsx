@@ -9,7 +9,7 @@ const Space = () => {
   const [stars, setStars] = useState([]);
 
   useEffect(() => {
-    const newStars = Array.from({ length: 500 }, () => getRandomPosition());
+    const newStars = Array.from({ length: 1000 }, () => getRandomPosition());
     setStars(newStars);
   }, []);
 
@@ -28,7 +28,7 @@ const Space = () => {
 const Star = ({ position }) => {
   return (
     <mesh position={position}>
-      <sphereGeometry args={[0.25, 24, 24]} />
+      <sphereGeometry args={[0.20, 8, 8]} />
       <meshStandardMaterial />
     </mesh>
   );
