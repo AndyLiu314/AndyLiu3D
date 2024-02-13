@@ -1,37 +1,41 @@
 import { useGLTF } from '@react-three/drei';
-import React, { useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 
 import spaceScene from '../assets/3D/stars_skybox.glb'
 
 const Space = () => {
   const space = useGLTF(spaceScene);
-  const stars = useRef([]);
+  const [stars, setStars] = useState([]);
+
+  useEffect(() => {
+    const newStars = Array.from({ length: 500 }, () => getRandomPosition());
+    setStars(newStars);
+  }, []);
+
   return (
     <mesh>
         <primitive 
           object={space.scene} 
           scale = {[100, 100, 100]} />
-        {addStar()}
+        {stars.map(([x, y, z], index) => (
+        <Star key={index} position={[x, y, z]} />
+        ))}
     </mesh>
   )
 }
 
-function addStar() {
-  const [x,y,z] = getRandomPosition();
-  console.log([x,y,z])
+const Star = ({ position }) => {
   return (
-    <mesh>
-      <sphereGeometry 
-        args={[0.25, 24, 24]}
-        position={[x,y,z]}/>
+    <mesh position={position}>
+      <sphereGeometry args={[0.25, 24, 24]} />
       <meshStandardMaterial />
     </mesh>
-  )
-}
+  );
+};
 
 function getRandomPosition() {
-  const [x,y,z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread( 100 ));
+  const [x,y,z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread( 200 ));
   return [x,y,z];
 }
 
