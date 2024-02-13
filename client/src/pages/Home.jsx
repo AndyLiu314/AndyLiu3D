@@ -28,7 +28,7 @@ const Home = () => {
       <Canvas 
         className='w-screen h-screen bg-transparent'
         camera = {{ 
-          fov: 75,
+          fov: 60,
           near: 0.1, 
           far: 1000,
           position: [0, 0, -20]}} >
