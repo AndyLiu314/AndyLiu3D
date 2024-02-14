@@ -35,7 +35,7 @@ const Star = ({ position }) => {
 };
 
 function getRandomPosition() {
-  const [x,y,z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread( 200 ));
+  const [x,y,z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread( 140 ));
   return [x,y,z];
 }
 
