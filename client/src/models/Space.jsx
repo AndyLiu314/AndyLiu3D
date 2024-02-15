@@ -17,7 +17,7 @@ const Space = () => {
     <mesh>
         <primitive 
           object={space.scene} 
-          scale = {[100, 100, 100]} />
+          scale = {[500, 500, 500]} />
         {stars.map(([x, y, z], index) => (
         <Star key={index} position={[x, y, z]} />
         ))}
@@ -28,15 +28,19 @@ const Space = () => {
 const Star = ({ position }) => {
   return (
     <mesh position={position}>
-      <sphereGeometry args={[0.20, 8, 8]} />
+      <sphereGeometry args={[0.3, 8, 8]} />
       <meshStandardMaterial />
     </mesh>
   );
 };
 
 function getRandomPosition() {
-  const [x,y,z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread( 140 ));
+  const [x,y,z] = Array(3).fill().map(() => THREE.MathUtils.randFloat( 30, 300 ));
   return [x,y,z];
+}
+
+function randomFloat (total, range) {
+
 }
 
 export default Space;
