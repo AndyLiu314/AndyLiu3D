@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 
 import spaceScene from '../assets/3D/stars_skybox.glb'
+import { randFloat } from 'three/src/math/MathUtils';
 
 const Space = () => {
   const space = useGLTF(spaceScene);
@@ -35,12 +36,25 @@ const Star = ({ position }) => {
 };
 
 function getRandomPosition() {
-  const [x,y,z] = Array(3).fill().map(() => THREE.MathUtils.randFloat( 30, 300 ));
+  //const [x,y,z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread( 300 ));
+  const [x,y,z] = Array(3).fill().map(() => twoRangeRandomFloat(50, 200));
   return [x,y,z];
 }
 
-function randomFloat (total, range) {
+function twoRangeRandomFloat (min, max) { // Inclusive
+  if (!Number.isInteger(min) || !Number.isInteger(max)) {
+    return;
+  }
+  const range = (max-min)+1;
+  const total = range*2;
+  var ranFloat = Math.random()*total;
+  if (ranFloat < range){
+    ranFloat -= max;
+  } else {
+    ranFloat -= min*2+1;
+  }
 
+  return ranFloat;
 }
 
 export default Space;
