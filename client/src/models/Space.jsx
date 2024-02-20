@@ -36,12 +36,12 @@ const Star = ({ position }) => {
 };
 
 function getRandomPosition() {
-  //const [x,y,z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread( 300 ));
-  const [x,y,z] = Array(3).fill().map(() => twoRangeRandomFloat(50, 200));
+  const [x,y,z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread( 300 ));
+  //const [x,y,z] = Array(3).fill().map(() => twoRangeRandomFloat(50, 200));
   return [x,y,z];
 }
 
-function twoRangeRandomFloat (min, max) { // Inclusive
+/* function twoRangeRandomFloat (min, max) { // Inclusive
   if (!Number.isInteger(min) || !Number.isInteger(max)) {
     return;
   }
@@ -55,6 +55,11 @@ function twoRangeRandomFloat (min, max) { // Inclusive
   }
 
   return ranFloat;
+} */
+
+function twoRangeRandomFloat (min, max) {
+ // what the fuck
+ // generate random number between 0 and 1, if 0 use negative if 1 use positive.
 }
 
 export default Space;
