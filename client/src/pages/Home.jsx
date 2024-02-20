@@ -5,6 +5,7 @@ import Loader from '../components/Loader';
 import Rocket from '../models/Rocket';
 import { OrbitControls } from '@react-three/drei';
 import Space from '../models/Space';
+import Earth from '../models/Earth';
 
 const Home = () => {
   const adjustRocket = () => {
@@ -31,11 +32,11 @@ const Home = () => {
           fov: 60,
           near: 0.1, 
           far: 1000,
-          position: [0, 0, -20]}} >
+          position: [0, 0, -25]}} >
 
         <Suspense fallback={<Loader />}>
           <OrbitControls />
-          <directionalLight position={[1,1,1]} intensity={0}/>
+          <directionalLight position={[1,1,1]} intensity={4}/>
           <ambientLight />
           <pointLight />
           <spotLight />
@@ -47,6 +48,7 @@ const Home = () => {
             scale = {rocketScale}
             rotation = {rocketRotation}
           />
+          <Earth /> 
         </Suspense>
       </Canvas>
 
