@@ -6,6 +6,7 @@ import Rocket from '../models/Rocket';
 import { OrbitControls } from '@react-three/drei';
 import Space from '../models/Space';
 import Earth from '../models/Earth';
+import Blackhole from '../models/Blackhole';
 
 const Home = () => {
   const adjustRocket = () => {
@@ -49,6 +50,7 @@ const Home = () => {
             rotation = {rocketRotation}
           />
           <Earth /> 
+          <Blackhole />
         </Suspense>
       </Canvas>
 
