@@ -10,7 +10,7 @@ const Space = () => {
   const [stars, setStars] = useState([]);
 
   useEffect(() => {
-    const newStars = Array.from({ length: 1000 }, () => getRandomPosition());
+    const newStars = Array.from({ length: 1500 }, () => getRandomPosition());
     setStars(newStars);
   }, []);
 
@@ -36,7 +36,7 @@ const Star = ({ position }) => {
 };
 
 function getRandomPosition() {
-  const [x,y,z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread( 300 ));
+  const [x,y,z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread( 500 ));
   //const [x,y,z] = Array(3).fill().map(() => twoRangeRandomFloat(50, 200));
   return [x,y,z];
 }
