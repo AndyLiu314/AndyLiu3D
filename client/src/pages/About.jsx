@@ -5,22 +5,6 @@ import Space from '../models/Space';
 import { OrbitControls } from '@react-three/drei';
 
 const About = () => {
-  const adjustRocket = () => {
-    let screenScale = null;
-    let screenPosition = [0, 0, 0];
-    let rotation = [0,3.15,0];
-
-    if (window.innerWidth < 768) {
-      screenScale = [0.9, 0.9, 0.9];
-    } else {
-      screenScale = [1, 1, 1];
-    }
-
-    return [screenScale, screenPosition, rotation];
-  }
-
-  const [rocketScale, rocketPosition, rocketRotation] = adjustRocket();
-
   return (
     <section className='w-screen h-screen fixed'>
       <Canvas
