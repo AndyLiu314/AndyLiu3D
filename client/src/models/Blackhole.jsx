@@ -6,7 +6,7 @@ Source: https://sketchfab.com/3d-models/blackhole-74cbeaeae2174a218fe9455d77902b
 Title: Blackhole
 */
 
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { useGLTF, useAnimations } from "@react-three/drei";
 import blackholeScene from '../assets/3D/black_hole.glb';
 

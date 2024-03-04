@@ -1,12 +1,22 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Suspense } from 'react';
-import { Canvas } from '@react-three/fiber';
+import { Canvas, useFrame } from '@react-three/fiber';
 import Loader from '../components/Loader';
 import Rocket from '../models/Rocket';
 import { OrbitControls } from '@react-three/drei';
 import Space from '../models/Space';
 import Earth from '../models/Earth';
 import Blackhole from '../models/Blackhole';
+
+const Rotating = (props) => {
+  const ref = useRef();
+
+  useFrame((_state, delta) => {
+    ref.current.rotation.y += 0.1*delta;
+  })
+
+  return <group ref={ref}>{props.children}</group>
+};
 
 const Home = () => {
   const adjustRocket = () => {
@@ -49,7 +59,10 @@ const Home = () => {
             scale = {rocketScale}
             rotation = {rocketRotation}
           />
+          <Rotating>
           <Earth /> 
+          </Rotating>
+          
           <Blackhole />
         </Suspense>
       </Canvas>
