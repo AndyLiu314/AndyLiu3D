@@ -1,0 +1,4 @@
+make it so that planets rotate when scrolling and will show different info in textboxes (diff regions of planets have diff info)
+make each page a diff planet that the rocket ship flys to
+maybe make the ship fly in and out of the screen from the left and right sides
+need to animate rocket flying
