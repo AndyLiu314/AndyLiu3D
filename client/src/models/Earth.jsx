@@ -11,22 +11,6 @@ import { useGLTF } from "@react-three/drei";
 import { a } from '@react-spring/three';
 import earthScene from '../assets/3D/planet_earth.glb';
 
-/* export function Model(props) {
-  const { nodes, materials } = useGLTF("/planet_earth.glb");
-  return (
-    <group {...props} dispose={null}>
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Object_Planet_0.geometry}
-        material={materials.Planet}
-        position={[-0.045, 1.247, 0.066]}
-        rotation={[Math.PI, 0, Math.PI]}
-      />
-    </group>
-  );
-} */
-
 const Earth = (props) => {
   const earthRef = useRef();
   const { nodes, materials } = useGLTF(earthScene);
