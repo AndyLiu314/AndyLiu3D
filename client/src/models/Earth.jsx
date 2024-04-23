@@ -40,7 +40,6 @@ const Earth = (props) => {
         material={materials.Planet}
         position={[-0.045, -25, 0.066]}
         scale={[20,20,20]}
-        //rotation={[Math.PI, 0, Math.PI]}
       />
     </a.group>
   )

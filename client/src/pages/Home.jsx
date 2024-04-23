@@ -7,6 +7,7 @@ import { OrbitControls } from '@react-three/drei';
 import Space from '../models/Space';
 import Earth from '../models/Earth';
 import Blackhole from '../models/Blackhole';
+import AlienPlanet from '../models/AlienPlanet';
 
 const Rotating = (props) => {
   const ref = useRef();
@@ -59,11 +60,17 @@ const Home = () => {
             scale = {rocketScale}
             rotation = {rocketRotation}
           />
+          
           <Rotating>
           <Earth /> 
           </Rotating>
           
           <Blackhole />
+
+          <Rotating>
+          <AlienPlanet />
+          </Rotating>
+
         </Suspense>
       </Canvas>
 
