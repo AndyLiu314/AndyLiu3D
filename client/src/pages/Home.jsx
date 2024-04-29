@@ -47,7 +47,7 @@ const Home = () => {
           position: [0, 0, -25]}} >
 
         <Suspense fallback={<Loader />}>
-          <OrbitControls />
+          {/* <OrbitControls /> */}
           <directionalLight position={[1,1,1]} intensity={4}/>
           <ambientLight />
           <pointLight />
