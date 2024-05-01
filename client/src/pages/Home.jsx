@@ -23,7 +23,7 @@ const Home = () => {
   const [yOffset, setYOffset] = useState(0);
   const adjustRocket = () => {
     let screenScale = null;
-    let screenPosition = [0, 0, 0];
+    let screenPosition = [0, yOffset, 0];
     let rotation = [0,3.15,0];
 
     if (window.innerWidth < 768) {
@@ -34,10 +34,16 @@ const Home = () => {
 
     const onWheel = (event) => {
       const delta = -event.deltaY; // Positive when scrolling down, negative when scrolling up
-      setYOffset((prevOffset) => prevOffset + delta * 0.001); // Adjust factor for sensitivity
+      setYOffset((prevOffset) => prevOffset + delta * 0.01); // Adjust factor for sensitivity
     };
 
-    let crazy = window.addEventListener('wheel', onWheel);
+    useEffect(() => {
+      window.addEventListener('wheel', onWheel);
+
+      return () => {
+        window.removeEventListener('wheel', onWheel);
+      };
+    }, []);
 
     return [screenScale, screenPosition, rotation];
   }
@@ -64,7 +70,7 @@ const Home = () => {
 
           <Space />
           <Rocket 
-            position = {[0, yOffset, 0]}
+            position = {rocketPosition}
             scale = {rocketScale}
             rotation = {rocketRotation}
           />
