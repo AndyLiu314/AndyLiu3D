@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { Suspense } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import Loader from '../components/Loader';
@@ -20,6 +20,7 @@ const Rotating = (props) => {
 };
 
 const Home = () => {
+  const [yOffset, setYOffset] = useState(0);
   const adjustRocket = () => {
     let screenScale = null;
     let screenPosition = [0, 0, 0];
@@ -30,6 +31,13 @@ const Home = () => {
     } else {
       screenScale = [1, 1, 1];
     }
+
+    const onWheel = (event) => {
+      const delta = -event.deltaY; // Positive when scrolling down, negative when scrolling up
+      setYOffset((prevOffset) => prevOffset + delta * 0.001); // Adjust factor for sensitivity
+    };
+
+    let crazy = window.addEventListener('wheel', onWheel);
 
     return [screenScale, screenPosition, rotation];
   }
@@ -56,7 +64,7 @@ const Home = () => {
 
           <Space />
           <Rocket 
-            position = {rocketPosition}
+            position = {[0, yOffset, 0]}
             scale = {rocketScale}
             rotation = {rocketRotation}
           />
