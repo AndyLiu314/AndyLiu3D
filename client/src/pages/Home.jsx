@@ -51,12 +51,11 @@ const Home = () => {
   const [rocketScale, rocketPosition, rocketRotation] = adjustRocket();
 
   return (
-    <section className='w-screen h-screen fixed'>
-      <Canvas 
-        className='w-screen h-screen bg-transparent'
+    <div className='w-screen h-screen fixed'>
+      <Canvas
         camera = {{ 
           fov: 60,
-          near: 0.1, 
+          near: 0.1,
           far: 1000,
           position: [0, 0, -25]}} >
 
@@ -88,7 +87,7 @@ const Home = () => {
         </Suspense>
       </Canvas>
 
-    </section>
+    </div>
   )
 }
 

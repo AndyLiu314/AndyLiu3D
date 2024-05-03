@@ -18,9 +18,9 @@ renderer.render(scene, camera); */
 
 function App() {
   return (
-    <main className="overflow-hidden">
+    <main>
       <Router>
-        <Sidebar />
+        {/* <Sidebar /> */}
         <Routes>
           <Route path = "/" element = {<Home />} />
           <Route path = "/about" element = {<About />} />
