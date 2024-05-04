@@ -4,403 +4,71 @@
 @tailwind components;
 @tailwind utilities;
 
-/*
-    CREDIT: https://github.com/adrianhajdin/3D_portfolio
-*/
-
 :root {
-  --blue-rgb: 237 245 255;
-  --green-rgb: 125 161 35;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
 }
 
 body {
-  font-family: "Work Sans", sans-serif;
-}
-
-body:has(.card[data-color="blue"]:hover) {
-  background-color: rgb(var(--blue-rgb) / 25%);
-}
-
-body:has(.card[data-color="green"]:hover) {
-  background-color: rgb(var(--green-rgb) / 25%);
-}
-
-@layer utilities {
-  .max-container {
-    @apply max-w-5xl mx-auto sm:p-16 pb-12 !pt-[126px] px-8 min-h-[calc(100vh-80px)];
-  }
-
-  .head-text {
-    @apply sm:text-5xl text-3xl font-semibold sm:leading-snug font-poppins;
-  }
-
-  .subhead-text {
-    @apply font-semibold sm:text-3xl text-xl relative font-poppins;
-  }
-
-  .blue-gradient_text {
-    @apply bg-gradient-to-r from-[#00c6ff] to-[#0072ff] bg-clip-text text-transparent;
-  }
-
-  .input {
-    @apply bg-white border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-2.5 font-normal shadow-card;
-  }
-
-  .textarea {
-    @apply block p-2.5 w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-200 focus:ring-blue-500 focus:border-blue-500 mt-2.5 font-normal shadow-card;
-  }
-
-  .btn {
-    @apply text-white bg-gradient-to-r from-[#00c6ff] to-[#0072ff] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center;
-  }
-
-  .header {
-    @apply flex flex-col-reverse justify-between items-center sm:py-4 py-8 max-w-5xl mx-auto fixed left-2 bg-transparent z-10 top-4 bottom-4;
-  }
-
-  .footer {
-    @apply max-w-5xl mx-auto sm:px-16 pb-6 px-8 flex flex-col gap-7;
-  }
-
-  .footer-container {
-    @apply flex flex-wrap gap-7 items-center justify-between;
-  }
-
-  .info-box {
-    @apply mx-5 relative flex text-white flex-col gap-3 max-w-2xl neo-brutalism-blue pt-4 pb-12 px-8;
-  }
-
-  .neo-btn {
-    @apply py-3 px-6 rounded-lg text-blue-500 text-center font-semibold sm:w-1/2 w-[90%] -bottom-5 absolute mx-auto right-0 left-0 flex justify-center items-center gap-3;
-  }
-
-  .cta {
-    @apply w-full flex items-center md:flex-row flex-col sm:mt-16 mt-8 gap-7;
-  }
-
-  .cta-text {
-    @apply text-black-500 font-extrabold flex-1 text-3xl max-md:text-center;
-  }
-}
-
-.glassmorphism {
-  background: rgba(8, 116, 239, 0.07);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-}
-
-.logo {
-  border-radius: 8.889px;
-  background: #fff;
-  box-shadow: 0px 10px 35px -4px rgba(67, 83, 255, 0.15),
-    0px 1.5px 4px -1px rgba(67, 83, 255, 0.2);
-}
-
-.block-container {
-  position: relative;
-  transition: 250ms;
-  perspective: 500px;
-}
-
-.block-container .btn-back {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  width: inherit;
-  height: inherit;
-  transition: 250ms;
-  transform-style: preserve-3d;
-  transform-origin: bottom right;
-  transform: rotateZ(15deg);
-  will-change: transform;
-  box-shadow: 16px 0 40px #e4e4e4;
-}
-
-.block-container .btn-back-red {
-  background: linear-gradient(135deg, #ff4b1f -20%, #ff9068 120%);
-}
-
-.block-container .btn-back-green {
-  background: linear-gradient(135deg, #adfda2 -20%, #11d3f3 120%);
-}
-
-.block-container .btn-back-yellow {
-  background: linear-gradient(135deg, #f7971e -20%, #ffd200 120%);
-}
-
-.block-container .btn-back-blue {
-  background: linear-gradient(135deg, #0061ff -20%, #60efff 120%);
-}
-
-.block-container .btn-back-orange {
-  background: linear-gradient(135deg, #ff0f7b -20%, #f89b29 120%);
-}
-
-.block-container .btn-back-pink {
-  background: linear-gradient(135deg, #e81cff -20%, #40c9ff 120%);
-}
-
-.block-container .btn-back-black {
-  background: linear-gradient(135deg, #0a1647 -20%, #e4e7e4 120%);
-}
-
-.block-container .btn-front {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  width: inherit;
-  height: inherit;
-  background-color: #ffffff33;
-  -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(20px);
-  transition: 250ms;
-  transform-style: preserve-3d;
-  transform-origin: top left;
-  overflow: hidden;
-}
-
-.block-container:hover > .btn-back {
-  transform: translateZ(20px) rotateZ(15deg) rotateX(-20deg) rotateY(-20deg);
-}
-
-.block-container:hover > .btn-front {
-  transform: translateZ(80px) translateY(-5px) rotateX(15deg) rotateY(15deg);
-}
-
-/* Neo Brutalism */
-.neo-brutalism-blue {
-  background: #2b77e7;
-  position: relative;
-  border-radius: 10px;
-  border: #2b77e7;
-  box-shadow: 0.6vmin 0.6vmin #336cc1, 1vmin 1vmin #0092db, 1vmin 1vmin #0092db,
-    0.65vmin 1vmin #0092db, 1vmin 0.65vmin #0092db;
-}
-
-.neo-brutalism-white {
-  background: #fff;
-  border: #fff;
-  box-shadow: 0.6vmin 0.6vmin #fff, 1vmin 1vmin #d2e4ff, 1vmin 1vmin #d2e4ff,
-    0.65vmin 1vmin #d2e4ff, 1vmin 0.65vmin #d2e4ff;
-}
-
-/*
-    CREDIT: https://github.com/fireship-io/tailwind-dashboard
-*/
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
   margin: 0;
-  padding: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
 }
 
-@layer components {
-  .sidebar-icon {
-    @apply relative flex items-center justify-center 
-    h-16 w-16 mt-2 mb-2 mx-auto  
-  bg-gray-400 hover:bg-green-600 dark:bg-gray-800 
-  text-green-500 hover:text-white
-    hover:rounded-xl rounded-3xl
-    transition-all duration-300 ease-linear
-    cursor-pointer shadow-lg ;
-  }
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
 
-  .sidebar-tooltip {
-    @apply absolute w-auto p-2 m-2 min-w-max left-14 rounded-md shadow-md
-    text-white bg-gray-900 
-    text-xs font-bold 
-    transition-all duration-100 scale-0 origin-left;
-  }
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
 
-  .sidebar-hr {
-    @apply bg-gray-200 dark:bg-gray-800 
-    border border-gray-200 dark:border-gray-800 rounded-full
-    mx-2;
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
   }
-
-  .top-navigation {
-    @apply flex flex-row items-center justify-evenly 
-    bg-gray-300 dark:bg-gray-700 bg-opacity-90 
-    w-full h-16 
-    m-0 
-    shadow-lg;
+  a:hover {
+    color: #747bff;
   }
-
-  .top-navigation-icon {
-    @apply text-gray-500
-    mr-3 ml-4
-    transition duration-300 ease-in-out 
-    hover:text-pink-400 
-    cursor-pointer;
-  }
-
-  .top-navigation-icon:first {
-    @apply ml-auto mr-4;
-  }
-
-  .title-hashtag {
-    @apply text-lg tracking-wider font-semibold text-gray-500 
-    ml-2 my-auto;
-  }
-
-  .title-text {
-    @apply text-xl text-gray-500 tracking-wider font-semibold text-opacity-80 
-    mr-auto ml-2 my-auto 
-    transition duration-300 ease-in-out;
-  }
-
-  .search {
-    @apply w-1/5 flex items-center justify-start 
-    bg-gray-400 dark:bg-gray-600
-    text-gray-500
-    px-2 h-9 ml-0 mr-0 
-    rounded-md shadow-md
-    transition duration-300 ease-in-out;
-  }
-
-  .search-input {
-    @apply w-full font-sans font-semibold
-    bg-transparent outline-none 
-    text-gray-500  placeholder-gray-500
-    pl-1 rounded;
-  }
-
-  .content-container {
-    @apply flex flex-col 
-    bg-gray-300 dark:bg-gray-700
-    m-0 
-    h-full w-full 
-    overflow-hidden;
-  }
-
-  .content-list {
-    @apply flex flex-col items-center 
-    h-full w-full 
-    mt-0 ml-0 mx-auto px-0 pb-12 
-    overflow-y-scroll;
-  }
-
-  .post {
-    @apply w-full
-    flex flex-row items-center justify-evenly
-    py-4 px-8 m-0
-    cursor-pointer;
-  }
-
-  .post-selected {
-    @apply bg-green-400 dark:bg-gray-900
-    shadow-md;
-  }
-
-  .post-content {
-    @apply w-4/5 
-    flex flex-col justify-start 
-    ml-auto;
-  }
-
-  .post-text {
-    @apply text-lg text-left text-gray-800 dark:text-white 
-    mr-auto whitespace-normal;
-  }
-
-  .post-owner {
-    @apply text-left font-semibold text-gray-800 dark:text-white mr-2 cursor-pointer;
-  }
-
-  .avatar-wrapper {
-    @apply flex flex-col items-center
-    w-12 
-    m-0 ml-auto mb-auto;
-  }
-
-  .avatar {
-    @apply flex-none
-    w-12 h-full 
-    rounded-full shadow-md
-    object-cover bg-gray-100 
-    mb-auto mt-0 mx-0 
-    cursor-pointer;
-  }
-
-  .timestamp {
-    @apply text-xs text-left font-semibold text-gray-500 dark:text-gray-600 ml-2;
-  }
-
-  .bottom-bar {
-    @apply flex flex-row items-center justify-between 
-    fixed left-88 right-8 bottom-2 
-    rounded-lg shadow-lg 
-    bg-gray-400 dark:bg-gray-600 px-2
-    h-12;
-  }
-
-  .bottom-bar-input {
-    @apply font-semibold w-full
-    bg-transparent outline-none 
-    ml-0 mr-auto
-    text-gray-500  dark:text-gray-400 placeholder-gray-500
-    cursor-text;
-  }
-
-  .channel-bar {
-    @apply w-80 h-auto m-0 ml-16 bg-gray-200 dark:bg-gray-800
-     overflow-hidden;
-  }
-
-  .channel-container {
-    @apply flex flex-col items-center justify-start 
-    p-1 m-0;
-  }
-
-  .channel-block {
-    @apply flex items-center justify-center 
-    h-16 
-    m-0 p-0;
-  }
-
-  .channel-block-text {
-    @apply text-lg tracking-wider font-bold 
-    text-gray-600 dark:text-gray-400 
-    mr-auto ml-4 my-auto align-middle;
-  }
-
-  .dropdown {
-    @apply m-0 w-full px-2 pb-2
-    transition duration-300 ease-in-out;
-  }
-
-  .dropdown-header {
-    @apply flex flex-row items-center justify-evenly
-    mx-0 text-gray-500
-    cursor-pointer;
-  }
-
-  .dropdown-header-text {
-    @apply text-gray-500  text-opacity-90 
-    text-lg font-semibold
-    cursor-default;
-  }
-
-  .dropdown-header-text-selected {
-    @apply text-blue-500 text-opacity-90 text-lg font-bold;
-  }
-
-  .dropdown-selection {
-    @apply flex flex-row items-center justify-evenly
-    mt-1 mr-auto ml-2
-    transition duration-300 ease-in-out
-    cursor-pointer;
-  }
-
-  .dropdown-selection-text {
-    @apply text-gray-500 font-semibold tracking-wide
-    mr-auto 
-    transition duration-300 ease-in-out 
-    hover:text-pink-500 dark:hover:text-gray-500
-    cursor-pointer;
+  button {
+    background-color: #f9f9f9;
   }
 }

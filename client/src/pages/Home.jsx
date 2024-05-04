@@ -3,7 +3,7 @@ import { Suspense } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import Loader from '../components/Loader';
 import Rocket from '../models/Rocket';
-import { OrbitControls } from '@react-three/drei';
+// import { OrbitControls } from '@react-three/drei';
 import Space from '../models/Space';
 import Earth from '../models/Earth';
 import Blackhole from '../models/Blackhole';
@@ -51,13 +51,13 @@ const Home = () => {
   const [rocketScale, rocketPosition, rocketRotation] = adjustRocket();
 
   return (
-    <div className='w-screen h-screen fixed'>
+    <div className='w-screen h-screen fixed centered'>
       <Canvas
-        camera = {{ 
+        camera = {{
           fov: 60,
           near: 0.1,
           far: 1000,
-          position: [0, 0, -25]}} >
+          position: [0, 0, -25]}}>
 
         <Suspense fallback={<Loader />}>
           {/* <OrbitControls /> */}
