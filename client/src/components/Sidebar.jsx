@@ -1,9 +1,9 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import Saturn from '../assets/Icons/Planets/saturn-svg.svg'
-import Earth from '../assets/Icons/Planets/planet-earth-svg.svg'
-import Mars from '../assets/Icons/Planets/mars-svg.svg'
-import Jupiter from '../assets/Icons/Planets/jupiter-svg.svg'
+import Saturn from '../assets/Icons/Planets/saturn-svg.svg';
+import Earth from '../assets/Icons/Planets/planet-earth-svg.svg';
+import Mars from '../assets/Icons/Planets/mars-svg.svg';
+import Jupiter from '../assets/Icons/Planets/jupiter-svg.svg';
 
 /* SIDEBAR IMPLEMENTATION     
 <div className='fixed top-0 left-0 h-screen w-16 m-0 flex flex-col bg-gray-900 text-white shadow-lg'>
