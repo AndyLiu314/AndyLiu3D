@@ -54,7 +54,7 @@ const Home = () => {
     <div className='w-screen h-screen fixed centered'>
       <Canvas
         camera = {{
-          fov: 60,
+          fov: 75,
           near: 0.1,
           far: 1000,
           position: [0, 0, -25]}}>
