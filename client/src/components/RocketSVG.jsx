@@ -29,9 +29,9 @@ const RocketSVG = (props) => (
     />
     <g id="SVGRepo_iconCarrier">
       <motion.g
-        animate={{ x: [40,-15,40], scale: [0.9,1,0.9]}}
+        animate={{ x: [5,-5,5], scale: [0.98,1,0.98], rotate: [0,1,-1,0]}}
         transition={{
-          duration: 2,
+          duration: 0.15,
           repeat: Infinity,
           type: "keyframes",
           ease: "easeInOut",
@@ -79,7 +79,7 @@ const RocketSVG = (props) => (
             fill="#ffbb00"
             animate={{ x: [15,-15,15], y: [-15,0,-15], opacity: [0.8, 0] }}
             transition={{
-              duration: 1 + idx / PROPULSION_PATHS.length,
+              duration: 0.5 + idx / PROPULSION_PATHS.length,
               repeat: Infinity,
             }}
           />

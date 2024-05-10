@@ -1,6 +1,7 @@
 import { Html } from '@react-three/drei';
 import { useState, useEffect } from 'react';
 import { RocketSVG } from './RocketSVG';
+import './LoaderStyle.css';
 
 const Loader = () => {
   const [progress, setProgress] = useState(0);
@@ -20,10 +21,20 @@ const Loader = () => {
   }, []);
 
   return (
-    <Html className="flex items-center justify-center h-full w-full">
-      <div>
+    <Html style={{position: 'fixed', translate: '-50vw -50vh'}} className='w-screen h-screen'>
+      <div className="longfazers">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div className='flex flex-col h-screen justify-center items-center'>
         <RocketSVG />
-        <div className="mt-2 text-white text-sm">Loading {progress}%</div> {/* Displaying the loading progress */}
+        <div className="mt-2 text-white text-sm">Loading {progress}%</div>
       </div>
     </Html>
   );

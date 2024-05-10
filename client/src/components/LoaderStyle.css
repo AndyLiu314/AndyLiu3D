@@ -1,0 +1,71 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300);
+
+.longfazers {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  span {
+    position: absolute;
+    width: 4px;
+    height: 10%;
+    background: #FFFFFF;
+
+    &:nth-child(1) {
+      left: 8%;
+      animation: lf .86s linear infinite;
+      animation-delay: -5s;
+    }
+
+    &:nth-child(2) {
+      left: 19%;
+      animation: lf .68s linear infinite;
+      animation-delay: -1s;
+    }
+
+    &:nth-child(3) {
+      left: 28%;
+      animation: lf .3s linear infinite;
+    }
+
+    &:nth-child(4) {
+      left: 42%;
+      animation: lf .65s linear infinite;
+      animation-delay: -3s;
+    }
+
+    &:nth-child(5) {
+      left: 56%;
+      animation: lf .51s linear infinite;
+      animation-delay: -3s;
+    }
+
+    &:nth-child(6) {
+      left: 67%;
+      animation: lf .89s linear infinite;
+      animation-delay: -3s;
+    }
+
+    &:nth-child(7) {
+      left: 85%;
+      animation: lf .38s linear infinite;
+      animation-delay: -3s;
+    }
+
+    &:nth-child(8) {
+      left: 96%;
+      animation: lf .7s linear infinite;
+      animation-delay: -3s;
+    }
+  }
+}
+
+@keyframes lf {
+  0% {
+    top: -200%;
+  }
+  100% {
+    top: 200%;
+    opacity: 0;
+  }
+}
