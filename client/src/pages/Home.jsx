@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { Suspense } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import Loader from '../components/Loader';
@@ -20,6 +20,7 @@ const Rotating = (props) => {
 };
 
 const Home = () => {
+  const [loading, setLoading] = useState(true);
   const [yOffset, setYOffset] = useState(0);
   const adjustRocket = () => {
     let screenScale = null;
@@ -46,7 +47,15 @@ const Home = () => {
     }, []);
 
     return [screenScale, screenPosition, rotation];
-  }
+  };
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setLoading(false);
+    }, 2000); // Adjust the delay time as needed
+
+    return () => clearTimeout(timeout);
+  }, []);
 
   const [rocketScale, rocketPosition, rocketRotation] = adjustRocket();
 
@@ -59,36 +68,39 @@ const Home = () => {
           far: 1000,
           position: [0, 0, -25]}}>
 
-        <Suspense fallback={<Loader />}>
-          {/* <OrbitControls /> */}
-          <directionalLight position={[1,1,1]} intensity={4}/>
-          <ambientLight />
-          <pointLight />
-          <spotLight />
-          <hemisphereLight />
+        {loading ? (
+          <Loader />
+        ) : (
+          <Suspense fallback={<Loader />}>
+            {/* <OrbitControls /> */}
+            <directionalLight position={[1,1,1]} intensity={4}/>
+            <ambientLight />
+            <pointLight />
+            <spotLight />
+            <hemisphereLight />
 
-          <Space />
-          <Rocket 
-            position = {rocketPosition}
-            scale = {rocketScale}
-            rotation = {rocketRotation}
-          />
-          
-          <Rotating>
-          <Earth /> 
-          </Rotating>
-          
-          <Blackhole />
+            <Space />
+            <Rocket 
+              position = {rocketPosition}
+              scale = {rocketScale}
+              rotation = {rocketRotation}
+            />
+            
+            <Rotating>
+            <Earth /> 
+            </Rotating>
+            
+            <Blackhole />
 
-          <Rotating>
-          <AlienPlanet />
-          </Rotating>
+            <Rotating>
+            <AlienPlanet />
+            </Rotating>
 
-        </Suspense>
+          </Suspense>
+        )}
       </Canvas>
-
     </div>
-  )
+  );
 }
 
 export default Home;
