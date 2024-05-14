@@ -1,4 +1,4 @@
-import Loader from '../components/Loader';
+import Loader from '../components/loader/Loader';
 import { Canvas } from '@react-three/fiber';
 import React, { Suspense } from 'react';
 import Space from '../models/Space';

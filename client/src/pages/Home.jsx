@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect } from 'react';
 import { Suspense } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import Loader from '../components/Loader';
+import Loader from '../components/loader/Loader';
 import Rocket from '../models/Rocket';
 // import { OrbitControls } from '@react-three/drei';
 import Space from '../models/Space';

@@ -1,7 +1,7 @@
 import { Html } from '@react-three/drei';
 import { useState, useEffect } from 'react';
 import { RocketSVG } from './RocketSVG';
-import './LoaderStyle.css';
+import './loader.css';
 
 const Loader = () => {
   const [progress, setProgress] = useState(0);
